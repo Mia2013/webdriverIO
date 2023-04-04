@@ -1,0 +1,46 @@
+2. Write tests for website (saucedemo.com): 
+add items to cart > 
+click on cart(verify added items are present) > 
+click Checkout > 
+Fulfill the form > 
+click Continue > 
+verify checkout information > 
+click Finish > 
+check success message
+
+
+Feature: Add products to the cart
+
+  Scenario1: Verify a user can add products to a cart
+    Given Existing user navigates to the app
+    When They provide correct credentials
+    And They add all products to the cart
+    Then All products should be in the cart
+
+  Scenario2: Navigate cart page
+    Given Products page
+    When The verified user click on Cart icon
+    Then It navigates to the cart page
+
+  Scenario3: Check products in the cart
+    Given Cart page
+    When The user added all products to the cart
+    Then All products should be in the cart
+
+  Scenario4: Checkout the products in the cart
+    Given All products in the cart
+    When The verified user click on the Checkout button
+    Then It navigates to the the checkout form
+
+  Scenario5: Fulfill the form
+    Given Chechout form
+    When The user fulfills the form and click on the Continue button
+    Then It navigates to the verify checkout information page
+
+  Scenario6: Verify checkout information
+    Given Overview page
+    When The user click on the Finish button 
+    Then It navigates to the verify checkout complete page
+    And show the success message
+
+
